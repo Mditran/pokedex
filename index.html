@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="/img/pokeball.png">
+    <link rel="stylesheet" href="./css/pokedex.css">
+    <script src="http://code.jquery.com/jquery-1.10.2.js"></script>
+    <script src="http://code.jquery.com/ui/1.11.2/jquery-ui.js"></script>
+    <title>Pokedex-Kalos</title>
+</head>
+
+<body>
+    <div class="base-superior">
+        <div class="linea-base"></div>
+        <div class="semicirculo"></div>
+    </div>
+    <section class="paddi">
+        <section>
+            <section class="holograma">
+                <div class="pokemon-container">
+                </div>
+            </section>
+            <section class="holograma">
+                <div class="espacio">
+                    <input type="text" id="cod" placeholder="Digite el codigo">
+                    <button onclick="traerPokemon()">Presioname</button>
+                </div>
+            </section>
+
+        </section>
+
+        <section class="holograma">
+            <table class="info-tabla">
+                <tbody class="tabla">
+                    <tr>
+                        <td>
+                            <h3>Estadisticas: </h3>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="texto">Vida: </td>
+                        <td class="info1"></td>
+                    </tr>
+                    <tr>
+                        <td class="texto">Ataque: </td>
+                        <td class="info2"></td>
+                    </tr>
+                    <tr>
+                        <td class="texto">Defensa: </td>
+                        <td class="info3"></td>
+                    </tr>
+                    <tr>
+                        <td class="texto">Ataque especial: </td>
+                        <td class="info4"></td>
+                    </tr>
+                    <tr>
+                        <td class="texto">Defensa especial: </td>
+                        <td class="info5"></td>
+                    </tr>
+                    <tr>
+                        <td class="texto">Velocidad: </td>
+                        <td class="info6"></td>
+                    </tr>
+                    <tr>
+                        <td class="texto">Tipo: </td>
+                        <td class="info7"></td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+    </section>
+
+    <div class="base-superior inferior">
+        <div class="linea-base"></div>
+        <div class="semicirculo"></div>
+    </div>
+    <script src="./js/pokedex.js"></script>
+</body>
+
+</html>
