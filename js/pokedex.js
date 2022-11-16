@@ -6,13 +6,6 @@ function traerPokemon() {
   fetch(`https://pokeapi.co/api/v2/pokemon/${id.value}/`)
     .then((res) => res.json())
     .then((data) => {
-      console.log(data);
-      cargarPokemon(data);
-    });
-  fetch(`https://pokeapi.co/api/v2/pokemon-form/${id.value}/`)
-    .then((res) => res.json())
-    .then((data) => {
-      console.log(data);
       cargarPokemon(data);
     });
 }
@@ -42,12 +35,17 @@ function cargarPokemon(pokemon) {
   contenerdorImagen.appendChild(sprite);
   card.appendChild(contenerdorImagen);
 
-  console.log(pokemon.types.length);
   let tipo = "";
   pokemon.types.forEach((element) => {
     tipo += `${element.type.name}, `;
   });
   tipo = tipo.substring(0, tipo.length - 2);
+
+  let habilidades = "";
+  pokemon.abilities.forEach((element) => {
+    habilidades += `${element.ability.name}, `;
+  });
+  habilidades = habilidades.substring(0, habilidades.length - 2);
 
   let num = 1;
   pokemon.stats.forEach((element) => {
@@ -56,6 +54,7 @@ function cargarPokemon(pokemon) {
   });
 
   cargarFilas(tipo, num);
+  cargarFilas(habilidades, num + 1);
 
   if ($(".pokemon-container").find(".img").length > 0) {
     pokemonContainer.removeChild(pokemonContainer.firstElementChild);
@@ -74,7 +73,7 @@ function cargarFilas(info, num) {
 }
 
 function eliminarFilas() {
-  for (let index = 1; index < 8; index++) {
+  for (let index = 1; index < 9; index++) {
     const esta = document.querySelector(`.info${index}`);
     esta.removeChild(esta.firstElementChild);
   }
