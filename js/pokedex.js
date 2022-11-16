@@ -3,7 +3,7 @@ const pokemonContainer = document.querySelector(".pokemon-container");
 var id = document.getElementById("cod");
 
 function traerPokemon() {
-  fetch(`https://pokeapi.co/api/v2/pokemon/${id.value}/`)
+  fetch(`https://pokeapi.co/api/v2/pokemon/${id.value.toLowerCase()}/`)
     .then((res) => res.json())
     .then((data) => {
       cargarPokemon(data);
