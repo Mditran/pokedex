@@ -7,7 +7,8 @@ function traerPokemon() {
     .then((res) => res.json())
     .then((data) => {
       cargarPokemon(data);
-    });
+    })
+    .catch((err) => alert("No hay registro de este pokemon"));
 }
 
 function cargarPokemon(pokemon) {
